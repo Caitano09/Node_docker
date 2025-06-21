@@ -4,8 +4,8 @@ services:
    ports: 
     - "3000:3000"
    volumes:
-    - ./:/app
-    - /app/node_modules
+    - ./:/app # sincroniza alterações/criação de arquivos entre o localhost e o docker
+    - /app/node_modules # volume anonimo 
    environment:
     - PORT=3000
   # env_file:
