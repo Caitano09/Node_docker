@@ -17,7 +17,7 @@ touch testefile
 printenv
 ping mongo
 
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build --no-deps node-app
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build -V --no-deps node-app --scale node-app=2
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v
 
 docker exec -it node-docker-mongo-1 mongosh -u "sanjeev" -p "mypassword"
@@ -27,3 +27,7 @@ use mydb
 show dbs
 db.books.insertOne({"name": "harry potter"})
 db.books.find()
+
+docker exec -it node-docker-redis-1 redis-cli
+KEYS *
+GET "sess:IyE2EPGGLqbG39cWo-gh92Um6fP4Ref6"
