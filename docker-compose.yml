@@ -8,6 +8,7 @@ services:
 
   node-app:
     build: .
+    image: caitano09/node-app
     environment:
       - PORT=3000
     depends_on:
