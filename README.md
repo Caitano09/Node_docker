@@ -20,6 +20,11 @@ docker rm watchtower -f
 
 docker info
 docker swarm init
+docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml myapp
+docker node ls
+docker stack ls
+docker stack services myapp
+docker stack ps myapp
 
 cat node index.js
 touch testefile
