@@ -14,7 +14,7 @@ services:
       - mongo
   
   mongo:
-    image: mongo:4.4
+    image: mongo:4.4 #usando essa versão para funcionar na maquina virtual
     environment: 
       MONGO_INITDB_ROOT_USERNAME: sanjeev
       MONGO_INITDB_ROOT_PASSWORD: mypassword   
