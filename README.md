@@ -20,7 +20,8 @@ export SESSION_SECRET="hello"
 set -o allexport; source /root/.env; set +o allexport;
 mkdir app
 
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build -V --no-deps node-app --scale node-app=2
+#use --help para ver o que significa os comandos
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build -V --no-deps node-app --scale node-app=2 --force-recreate 
 docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v
 
 docker exec -it node-docker-mongo-1 mongosh -u "sanjeev" -p "mypassword"
