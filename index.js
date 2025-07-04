@@ -17,8 +17,6 @@ let attemptsConnection = 0
 
 const connectWithRetry = () => {
     const mongoURL = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
-    console.log(mongoURL)
-    console.log(process.env)
     mongoose
         .connect(mongoURL)
         .then(() => console.log('succesfully connected to DB'))
